@@ -1,65 +1,108 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-[#F7FBFD]">
+      <nav className="sticky top-0 z-50 flex items-center justify-between bg-[#1E3765]/95 px-8 py-5 text-white shadow-lg backdrop-blur">
+        <div className="flex items-center gap-7">
+          <Image
+            src="/logo.png"
+            alt="For the Blue Logo"
+            width={70}
+            height={70}
+            priority
+          />
+          <h1 className="text-2xl font-bold text-white">
+            For the Blue
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        </div>
+
+        <div className="flex gap-6 text-white">
+          <Link href = "/">Home</Link>
+          <a href="/about">About</a>
+          <a href="/campaigns">Campaigns</a>
+          <a href="/learn">Learn</a>
+          <a href="/get-involved">Get Involved</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </nav>
+
+      <section className="px-8 py-32 text-center">
+        <h2 className="text-5xl font-bold text-[#1E3765]">
+          Protecting Our Blue Planet,
+          <br />
+          From Ocean to Arctic.
+        </h2>
+
+        <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
+          For the Blue empowers people to protect our oceans and the Arctic
+          through education, creativity, technology, and community action.
+        </p>
+
+        <div className="mt-8 flex justify-center gap-4">
+          <button className="rounded-full bg-[#007FA3] px-6 py-3 text-white">
+            Explore Campaigns
+          </button>
+
+          <button className="rounded-full border border-[#007FA3] px-6 py-3 text-[#007FA3]">
+            Get Involved
+          </button>
+        </div>
+      </section>
+
+      <section className="bg-[#C4E4EF] py-20">
+        <div className="mx-auto max-w-4xl px-8 text-center">
+          <h2 className="mb-6 text-4xl font-bold text-[#1E3765]">
+            Our Mission
+          </h2>
+
+          <p className="text-lg leading-8 text-[#1E3765]">
+            For the Blue is a youth-led nonprofit committed to supporting the
+            protection of our oceans and the Arctic through fundraising,
+            education, and community action. We connect people with meaningful
+            campaigns that help make a lasting difference.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
+
+      <section className="bg-[#F7FBFD] py-20">
+  <div className="mx-auto max-w-6xl px-8">
+    <h2 className="mb-10 text-center text-4xl font-bold text-[#1E3765]">
+      Featured Campaigns
+    </h2>
+
+    <div className="grid gap-8 md:grid-cols-3">
+      <div className="rounded-2xl bg-white p-6 shadow">
+        <h3 className="mb-3 text-2xl font-semibold text-[#1E3765]">
+          Campaign One
+        </h3>
+        <p className="text-gray-600">
+          A short description of your current fundraising campaign.
+        </p>
+      </div>
+
+      <div className="rounded-2xl bg-white p-6 shadow">
+        <h3 className="mb-3 text-2xl font-semibold text-[#1E3765]">
+          Campaign Two
+        </h3>
+        <p className="text-gray-600">
+          Highlight another initiative or fundraising effort.
+        </p>
+      </div>
+
+      <div className="rounded-2xl bg-white p-6 shadow">
+        <h3 className="mb-3 text-2xl font-semibold text-[#1E3765]">
+          Campaign Three
+        </h3>
+        <p className="text-gray-600">
+          Showcase an upcoming or ongoing campaign here.
+        </p>
+      </div>
     </div>
+  </div>
+</section>
+
+    </main>
   );
 }

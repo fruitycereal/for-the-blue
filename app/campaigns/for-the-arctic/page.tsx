@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 
 export default function ForTheArcticPage() {
   return (
     <main className="min-h-screen bg-[#F7FBFD]">
+      <Navbar />
       {/* Banner */}
       <div className="relative h-[350px] w-full">
         <Image

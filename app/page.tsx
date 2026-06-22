@@ -41,13 +41,17 @@ export default function Home() {
         </p>
 
         <div className="mt-8 flex justify-center gap-4">
-          <button className="rounded-full bg-[#007FA3] px-6 py-3 text-white">
-            Explore Campaigns
-          </button>
+          <a href = '/campaigns'>
+            <button className="rounded-full bg-[#007FA3] px-6 py-3 text-white">
+              Explore Campaigns
+            </button>
+          </a>
 
+         <a href = '/get-involved'>
           <button className="rounded-full border border-[#007FA3] px-6 py-3 text-[#007FA3]">
             Get Involved
           </button>
+        </a>
         </div>
       </section>
 

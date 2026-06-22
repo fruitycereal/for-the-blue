@@ -7,7 +7,7 @@ export default function ForTheArcticPage() {
     <main className="min-h-screen bg-[#F7FBFD]">
       <Navbar />
       {/* Banner */}
-      <div className="relative h-[350px] w-full">
+      <div className="relative h-[300px] w-full bg-[#C4E4EF]">
         <Image
           src="/arctic-banner.jpg"
           alt="For The Arctic campaign banner"
@@ -17,8 +17,7 @@ export default function ForTheArcticPage() {
         />
       </div>
 
-      {/* Content */}
-      <section className="mx-auto max-w-5xl px-8 py-16">
+      <section className="mx-auto max-w-5xl px-8 py-20 text-center">
         <p className="mb-3 inline-block rounded-full bg-[#C4E4EF] px-4 py-2 text-sm font-semibold text-[#1E3765]">
           🟢 Active Campaign
         </p>
@@ -27,54 +26,113 @@ export default function ForTheArcticPage() {
           For The Arctic
         </h1>
 
-        <p className="mt-6 text-xl text-gray-700">
+        <p className="mx-auto mt-6 max-w-3xl text-xl text-gray-700">
           A campaign dedicated to raising awareness about the Arctic, educating
           communities about its importance, and supporting conservation through
           fundraising initiatives.
         </p>
 
-        <div className="mt-10 rounded-3xl bg-white p-8 shadow-md">
-          <h2 className="text-3xl font-bold text-[#1E3765]">
-            Why This Campaign Matters
-          </h2>
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="rounded-3xl bg-white p-8 text-left shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            <h2 className="text-3xl font-bold text-[#1E3765]">
+              🌍 Why This Campaign Matters
+            </h2>
 
-          <p className="mt-4 leading-8 text-gray-700">
-            The Arctic plays a vital role in regulating Earth's climate and is
-            home to unique ecosystems and wildlife. Through educational content,
-            community outreach, and fundraising efforts, For the Blue aims to
-            inspire more people to understand its importance and take action.
-          </p>
-        </div>
+            <p className="mt-4 leading-8 text-gray-700">
+              The Arctic plays a vital role in regulating Earth's climate and is home
+              to unique ecosystems and wildlife. Through education, outreach, and
+              fundraising, For the Blue hopes to inspire more people to understand
+              its importance and take action.
+            </p>
+          </div>
 
-        <div className="mt-8 rounded-3xl bg-white p-8 shadow-md">
-          <h2 className="text-3xl font-bold text-[#1E3765]">
-            How We're Helping
-          </h2>
+          <div className="rounded-3xl bg-white p-8 text-left shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            <h2 className="text-3xl font-bold text-[#1E3765]">
+              💙 How We're Helping
+            </h2>
 
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-gray-700">
-            <li>📚 Sharing educational resources about the Arctic.</li>
-            <li>👕 Raising funds through merchandise sales.</li>
-            <li>💙 Supporting environmental conservation initiatives.</li>
-            <li>🌍 Encouraging young people to get involved and spread awareness.</li>
-          </ul>
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-4">
-          <Link
-            href="/learn"
-            className="rounded-full bg-[#007FA3] px-6 py-3 text-white"
-          >
-            Learn More
-          </Link>
-
-          <Link
-            href="/get-involved"
-            className="rounded-full border border-[#007FA3] px-6 py-3 text-[#007FA3]"
-          >
-            Get Involved
-          </Link>
+            <ul className="mt-4 space-y-3 text-gray-700">
+              <li>📚 Sharing educational resources</li>
+              <li>👕 Raising funds through merchandise</li>
+              <li>💙 Supporting conservation initiatives</li>
+              <li>🌍 Inspiring community action</li>
+            </ul>
+          </div>
         </div>
       </section>
-    </main>
+
+
+    <section className="mx-auto max-w-5xl px-8 py-16">
+      <h2 className="text-center text-4xl font-bold text-[#1E3765]">
+        Preserving the Arctic
+      </h2>
+
+      <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-gray-700">
+        As part of the For The Arctic campaign, we've created an educational
+        series exploring why the Arctic matters and why protecting it matters to
+        all of us.
+      </p>
+      <br></br>
+    
+      <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <h3 className="mt-4 text-2xl font-bold text-[#1E3765]">
+              When Comfort Begins to Melt
+            </h3>
+            <p className="mt-3 text-gray-600">
+              Discover how the Arctic helps regulate Earth's climate and why its rapid warming affects us all.
+            </p>
+            <p className="mt-6 font-medium text-[#007FA3]">
+              Read more →
+            </p>
+          </div>
+
+        <div className="rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <h3 className="mt-4 text-2xl font-bold text-[#1E3765]">
+              The Thaw That Feeds Itself
+            </h3>
+            <p className="mt-3 text-gray-600">
+              Learn how Arctic warming can trigger feedback loops that accelerate even more change.
+            </p>
+            <p className="mt-6 font-medium text-[#007FA3]">
+              Read more →
+            </p>
+        </div>
+
+      <div className="rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+        <h3 className="mt-4 text-2xl font-bold text-[#1E3765]">
+          For the Arctic, By Us
+        </h3>
+        <p className="mt-3 text-gray-600">
+          Explore how education and community action can help protect the Arctic.
+        </p>
+        <p className="mt-6 font-medium text-[#007FA3]">
+          Read more →
+        </p>
+      </div>
+  </div>
+
+    <section className="mt-16 text-center">
+      <h2 className="text-3xl font-bold text-[#1E3765]">
+        Explore More
+      </h2>
+
+      <p className="mx-auto mt-4 max-w-2xl text-gray-700">
+        Want to dive deeper? Visit our full <strong>Preserving the Arctic</strong>{" "}
+        educational resource for additional information and learning materials.
+      </p>
+
+      <a href="https://sites.google.com/view/preserving-for-the-arctic/home#h.9diy3wndrv5w"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-8 inline-block rounded-full bg-[#007FA3] px-6 py-3 text-white transition hover:opacity-90"
+      >
+        Explore the Resource →
+      </a>
+    </section>
+    <br></br>
+  </section>
+</main>
+
   );
 }

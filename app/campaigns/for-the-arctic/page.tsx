@@ -7,15 +7,7 @@ export default function ForTheArcticPage() {
     <main className="min-h-screen bg-[#F7FBFD]">
       <Navbar />
       {/* Banner */}
-      <div className="relative h-[300px] w-full bg-[#C4E4EF]">
-        <Image
-          src="/arctic-banner.jpg"
-          alt="For The Arctic campaign banner"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+
 
       <section className="mx-auto max-w-5xl px-8 py-20 text-center">
         <p className="mb-3 inline-block rounded-full bg-[#C4E4EF] px-4 py-2 text-sm font-semibold text-[#1E3765]">
@@ -32,21 +24,23 @@ export default function ForTheArcticPage() {
           fundraising initiatives.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div className="rounded-3xl bg-white p-8 text-left shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+        <div className="mt-10 flex gap-8">
+          <div className="rounded-3xl bg-white p-8 shadow-md">
             <h2 className="text-3xl font-bold text-[#1E3765]">
               🌍 Why This Campaign Matters
             </h2>
 
             <p className="mt-4 leading-8 text-gray-700">
               The Arctic plays a vital role in regulating Earth's climate and is home
-              to unique ecosystems and wildlife. Through education, outreach, and
+              to unique ecosystems and wildlife. 
+              <br></br>
+              Through education, outreach, and
               fundraising, For the Blue hopes to inspire more people to understand
               its importance and take action.
             </p>
           </div>
 
-          <div className="rounded-3xl bg-white p-8 text-left shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+        <div className="rounded-3xl bg-white p-8 shadow-md">
             <h2 className="text-3xl font-bold text-[#1E3765]">
               💙 How We're Helping
             </h2>
@@ -75,7 +69,8 @@ export default function ForTheArcticPage() {
       <br></br>
     
       <div className="mt-10 grid gap-6 md:grid-cols-3">
-        <div className="rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+        <Link href="/campaigns/for-the-arctic/when-comfort-begins-to-melt">
+        <div className="cursor-pointer rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl">
             <h3 className="mt-4 text-2xl font-bold text-[#1E3765]">
               When Comfort Begins to Melt
             </h3>
@@ -86,33 +81,40 @@ export default function ForTheArcticPage() {
               Read more →
             </p>
           </div>
+        </Link>
 
-        <div className="rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <h3 className="mt-4 text-2xl font-bold text-[#1E3765]">
-              The Thaw That Feeds Itself
-            </h3>
-            <p className="mt-3 text-gray-600">
-              Learn how Arctic warming can trigger feedback loops that accelerate even more change.
-            </p>
-            <p className="mt-6 font-medium text-[#007FA3]">
-              Read more →
-            </p>
+          <Link href="/campaigns/for-the-arctic/the-thaw-that-feeds-itself">
+            <div className="cursor-pointer rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <h3 className="mt-4 text-2xl font-bold text-[#1E3765]">
+                The Thaw That Feeds Itself
+              </h3>
+              <p className="mt-3 text-gray-600">
+                Learn how Arctic warming can trigger feedback loops that accelerate even more change.
+              </p>
+              <p className="mt-6 font-medium text-[#007FA3]">
+                Read more →
+              </p>
+            </div>
+          </Link>
+        
+       <Link href="/campaigns/for-the-arctic/for-the-arctic-by-us">
+        <div className="cursor-pointer rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+          <h3 className="mt-4 text-2xl font-bold text-[#1E3765]">
+            For the Arctic, By Us
+          </h3>
+          <p className="mt-3 text-gray-600">
+            Explore how education and community action can help protect the Arctic.
+          </p>
+          <p className="mt-6 font-medium text-[#007FA3]">
+            Read more →
+          </p>
         </div>
-
-      <div className="rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-        <h3 className="mt-4 text-2xl font-bold text-[#1E3765]">
-          For the Arctic, By Us
-        </h3>
-        <p className="mt-3 text-gray-600">
-          Explore how education and community action can help protect the Arctic.
-        </p>
-        <p className="mt-6 font-medium text-[#007FA3]">
-          Read more →
-        </p>
+      </Link>
       </div>
-  </div>
+    </section>
 
     <section className="mt-16 text-center">
+      <br></br>
       <h2 className="text-3xl font-bold text-[#1E3765]">
         Explore More
       </h2>
@@ -127,11 +129,11 @@ export default function ForTheArcticPage() {
         rel="noopener noreferrer"
         className="mt-8 inline-block rounded-full bg-[#007FA3] px-6 py-3 text-white transition hover:opacity-90"
       >
+        
         Explore the Resource →
       </a>
     </section>
     <br></br>
-  </section>
 </main>
 
   );

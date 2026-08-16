@@ -6,9 +6,6 @@ export default function ForTheArcticPage() {
   return (
     <main className="min-h-screen bg-[#F7FBFD]">
       <Navbar />
-      {/* Banner */}
-
-
       <section className="mx-auto max-w-5xl px-8 py-20 text-center">
         <p className="mb-3 inline-block rounded-full bg-[#C4E4EF] px-4 py-2 text-sm font-semibold text-[#1E3765]">
           🟢 Active Campaign

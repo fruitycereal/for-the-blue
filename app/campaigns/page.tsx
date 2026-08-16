@@ -53,15 +53,15 @@ export default function CampaignsPage() {
           <Link href="/campaigns/for-the-arctic" className="group">
             <div className="flex min-h-[220px] flex-col rounded-2xl border border-[#007FA3] bg-white p-6 transition hover:shadow-lg">
               <h2 className="text-lg font-semibold text-[#1E3765]">For The Arctic</h2>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-500">
+              <p className="mt-2 flex-1 text-sm leading-relaxed" style={{ color: "#596a8b" }}>
                 Our first fundraising campaign dedicated to raising awareness
                 about the Arctic through education, outreach, and merchandise.
               </p>
               <div className="mt-5 flex items-center justify-between">
-                <span className="rounded-full border border-[#b0dcea] bg-[#e6f6fb] px-3 py-1 text-xs font-medium text-[#007FA3]">
+                <span className="rounded-full border border-[#b0dcea] bg-[#e6f6fb] px-5 py-1 text-xs font-medium text-[#007FA3]">
                   Active
                 </span>
-                <span className="text-sm font-medium text-[#1E3765] transition-colors group-hover:text-[#007FA3]">
+                <span className="text-sm font-medium text-[#007FA3] transition-colors group-hover:text-[#007FA3]">
                   View →
                 </span>
               </div>
@@ -70,7 +70,7 @@ export default function CampaignsPage() {
 
           {/* Coming soon card 1 */}
           <div className="flex min-h-[220px] flex-col rounded-2xl border border-[#d0e8f2] bg-white p-6">
-            <h2 className="text-lg font-semibold text-slate-400">Ocean Health</h2>
+            <h2 className="text-lg font-semibold text-slate-500"> For The Ocean </h2>
             <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">
               A future campaign focused on ocean conservation, marine ecosystems,
               and reducing plastic pollution in our seas.

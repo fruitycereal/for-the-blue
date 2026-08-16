@@ -196,7 +196,11 @@ export default function Home() {
       {/* OUR STORY */}
       <section className="bg-[#F7FBFD] px-6 pb-20 sm:px-8">
         <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2 md:gap-14">
-          <div className="mx-auto aspect-[4/5] w-full max-w-sm rounded-2xl bg-[#D9D9D9] shadow-sm" />
+          <img
+            src="actualpics/ourstoryimg.png"
+            alt="Our story visual"
+            className="mx-auto aspect-[4/5] w-full max-w-sm rounded-2xl object-cover shadow-sm"
+          />
 
           <div>
             <h3 className="text-3xl font-bold text-[#1E3765] sm:text-4xl">Our Story</h3>

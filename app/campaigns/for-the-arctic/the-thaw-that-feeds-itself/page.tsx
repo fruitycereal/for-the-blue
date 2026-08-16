@@ -11,7 +11,7 @@ export default function ForTheArcticPage() {
       <section className="relative overflow-hidden">
         <div className="relative h-[360px] w-full">
           <Image
-            src="/actualpics/campaign1.png"
+            src="/campaignpics/thaw.jpg"
             alt="Arctic sea ice"
             fill
             className="object-cover"

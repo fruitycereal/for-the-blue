@@ -86,14 +86,6 @@ const QUICK_LINKS = [
   { label: "Contact", href: "/#contact" },
 ];
 
-export const metadata = {
-  title: "For the Blue",
-  description: "Protecting our oceans and the Arctic.",
-  icons: {
-    icon: "/icon.png",
-  },
-};
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#F7FBFD]">

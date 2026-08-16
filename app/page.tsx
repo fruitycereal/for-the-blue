@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
@@ -8,7 +10,7 @@ import {
   HandshakeIcon,
   GlobeIcon,
   GraduationCapIcon,
-  LeafIcon,
+  PlantHandIcon,
   UsersIcon,
   SparkleIcon,
   MailIcon,
@@ -33,7 +35,7 @@ const MISSION_PILLARS = [
     text: "By sharing accessible and engaging educational content, we aim to inspire curiosity and informed action.",
   },
   {
-    icon: LeafIcon,
+    icon: PlantHandIcon,
     title: "Environmental Stewardship",
     text: "We are committed to protecting the natural world, with a focus on the oceans, the Arctic, and the ecosystems that sustain life on Earth.",
   },
@@ -88,7 +90,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#F7FBFD]">
       <Navbar />
-      <WaveDivider fill="#F7FBFD" />
+      <WaveDivider />
 
       {/* HERO */}
       <section id="home" className="scroll-mt-20 px-6 pb-20 pt-10 text-center sm:px-8 sm:pb-28">
@@ -104,27 +106,65 @@ export default function Home() {
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
-          <Link
-            href="/#campaigns"
+          <a
+            href="#campaigns"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("campaigns")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
             className="inline-block w-full rounded-full bg-[#007FA3] px-6 py-3 text-center text-white transition hover:bg-[#006a8a] sm:w-auto"
           >
             Explore Campaigns
-          </Link>
-          <Link
-            href="/#get-involved"
+          </a>
+
+          <a
+            href="#get-involved"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("get-involved")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
             className="inline-block w-full rounded-full border border-[#007FA3] px-6 py-3 text-center text-[#007FA3] transition hover:bg-[#e6f6fb] sm:w-auto"
           >
             Get Involved
-          </Link>
+          </a>
         </div>
       </section>
 
       {/* STATS BAR */}
       <section className="bg-[#D9D9D9] px-6 py-8 sm:px-16">
-        <p className="text-3xl font-bold text-[#1E3765] sm:text-4xl">300+</p>
-        <p className="mt-1 text-sm font-medium text-[#1E3765]/80 sm:text-base">
-          Students reached
-        </p>
+        <div className="mx-auto grid max-w-5xl grid-cols-3 text-center">
+          
+          <div>
+            <p className="text-3xl font-bold text-[#1E3765] sm:text-4xl">
+              200+
+            </p>
+            <p className="mt-1 text-sm font-medium text-[#1E3765]/80 sm:text-base">
+              Students reached
+            </p>
+          </div>
+
+          <div>
+            <p className="text-3xl font-bold text-[#1E3765] sm:text-4xl">
+              $300+
+            </p>
+            <p className="mt-1 text-sm font-medium text-[#1E3765]/80 sm:text-base">
+              Raised for conservation
+            </p>
+          </div>
+
+          <div>
+            <p className="text-3xl font-bold text-[#1E3765] sm:text-4xl">
+              30
+            </p>
+            <p className="mt-1 text-sm font-medium text-[#1E3765]/80 sm:text-base">
+              Volunteers & contributors
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* ABOUT PHOTO BAND */}
@@ -213,16 +253,17 @@ export default function Home() {
 
       {/* OUR MISSION */}
       <section
-        className="relative overflow-hidden bg-cover bg-center px-6 py-20 sm:px-8"
+        className="relative overflow-hidden bg-cover bg-center px-6 py-20 sm:px-12 sm:py-24"
         style={{ backgroundImage: "url('/actualpics/mission.png')" }}
       >
-        <div className="relative mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold text-[#1E3765] drop-shadow-[0_2px_10px_rgba(255,255,255,0.5)] sm:text-4xl">
+        <div className="relative mx-auto max-w-7xl text-center">
+          {/* Upper Section */}
+          <h2 className="text-3xl font-bold text-[#071D42] drop-shadow-[0_2px_10px_rgba(255,255,255,0.5)] sm:text-4xl">
             Our Mission
           </h2>
 
-          <div className="mt-8 rounded-xl bg-[#1E3765]/90 px-6 py-8 text-center sm:px-12 sm:py-10">
-            <p className="text-base leading-relaxed text-[#F1C78A] sm:text-lg">
+          <div className="mx-auto mt-8 max-w-4xl bg-[#071D42]/80 px-6 py-8 text-center sm:px-12 sm:py-10">
+            <p className="text-lg leading-relaxed text-[#FFE4A0] sm:text-xl">
               For The Blue is a youth-led nonprofit committed to supporting
               the protection of our oceans and the Arctic through
               fundraising, education, and community action. We connect people
@@ -230,14 +271,24 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Pillars Grid */}
+          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {MISSION_PILLARS.map(({ icon: Icon, title, text }) => (
               <div key={title} className="flex flex-col items-center text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#F1C78A]">
-                  <Icon className="h-8 w-8 text-[#1E3765]" />
+                {/* Badge Icon */}
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#F1C78A] shadow-sm">
+                  <Icon className="h-10 w-10 text-[#071D42]" />
                 </div>
-                <h3 className="mt-4 text-base font-bold text-[#1E3765]">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#1E3765]/90">{text}</p>
+
+                {/* Title */}
+                <h3 className="mt-6 text-xl font-extrabold tracking-tight text-[#071D42]">
+                  {title}
+                </h3>
+
+                {/* Text */}
+                <p className="mt-3 text-sm leading-snug font-semibold text-[#071D42]/90 sm:text-base">
+                  {text}
+                </p>
               </div>
             ))}
           </div>
@@ -263,7 +314,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <WaveDivider fill="#F7FBFD" />
 
       {/* CAMPAIGN CARDS */}
       <section className="bg-[#F7FBFD] px-6 pb-10 pt-4 sm:px-8">
@@ -376,7 +426,7 @@ export default function Home() {
 {/* FOOTER */}
 <footer
   id="contact"
-  className="scroll-mt-20 bg-[#1E3765] px-6 pt-16 text-white sm:px-8"
+  className="scroll-mt-20 bg-[#071D42] px-6 pt-16 text-white sm:px-8"
 >
   <div className="mx-auto grid max-w-6xl gap-10 pb-14 sm:grid-cols-2 lg:grid-cols-4">
 
@@ -491,7 +541,7 @@ export default function Home() {
   <div id="donate" className="scroll-mt-20 flex justify-center pb-10">
     <a
       href="https://linktr.ee/fortheblue.eco"
-      className="flex items-center gap-2 rounded-full bg-[#F1C78A] px-8 py-3 text-sm font-semibold text-[#1E3765] transition hover:bg-[#eabb6f]"
+      className="flex items-center gap-2 rounded-full bg-[#EFC13B] px-8 py-3 text-sm font-semibold text-[#1E3765] transition hover:bg-[#eabb6f]"
     >
       Donate Today
       <ArrowRightIcon className="h-4 w-4" />

@@ -74,58 +74,63 @@ export function GlobeIcon({ className }: IconProps) {
   );
 }
 
+// 1. Graduation Cap (Solid style matching Figma)
 export function GraduationCapIcon({ className }: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" className={className}>
-      <path d="M12 4.2L2.3 9l9.7 4.8L21.7 9 12 4.2z" fill="currentColor" />
-      <path d="M6.3 11.4v4.4c0 1.7 2.6 3 5.7 3s5.7-1.3 5.7-3v-4.4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M21 9.5V15" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M12 3.5L2 8.5l10 5 10-5-10-5z" />
+      <path d="M6.5 11.5v4c0 2.2 2.5 4 5.5 4s5.5-1.8 5.5-4v-4l-5.5 2.7-5.5-2.7z" />
+      <path d="M19.5 9.8v5.7a1 1 0 00.5.86l.8.46a.5.5 0 00.7-.44v-6.3l-2-.28z" />
     </svg>
   );
 }
 
-export function LeafIcon({ className }: IconProps) {
+// 2. Hand holding plant/sprout (Matching the original environment icon)
+export function PlantHandIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className}>
-      <path d="M19.7 4.3c-8.3 0-14 5.2-14 13 0 .7.1 1.4.2 2.1 7.4-.3 13.8-4.4 13.8-15.1z" fill="currentColor" />
-      <path d="M6.2 19c4.1-4.6 8.3-8.9 12.4-13.4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      {/* Stem */}
+      <path
+        d="M12 20V9"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+
+      {/* Left leaf */}
+      <path
+        d="M12 11C7.5 11 4.5 8 4.8 4.2C8.8 4.1 12 6.5 12 11Z"
+        fill="currentColor"
+      />
+
+      {/* Right leaf */}
+      <path
+        d="M12 13C16.5 13 19.5 10 19.2 6.2C15.2 6.1 12 8.5 12 13Z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
 
+// 3. Two People / Community (Solid style matching Figma)
 export function UsersIcon({ className }: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" className={className}>
-      <path
-        d="M18 21a8 8 0 0 0-16 0"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle
-        cx="10"
-        cy="8"
-        r="5"
-        stroke="currentColor"
-        strokeWidth="1.7"
-      />
-      <path
-        d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      {/* Left / Main Person */}
+      <circle cx="9" cy="8" r="3.5" />
+      <path d="M3 18.5c0-3 2.7-5.5 6-5.5s6 2.5 6 5.5v.5H3v-.5z" />
+      {/* Right Person */}
+      <circle cx="16.5" cy="9.5" r="2.8" />
+      <path d="M15.2 14.1c1.2-.4 2.6-.2 3.6.4 1.4.9 2.2 2.3 2.2 3.9v.6h-4.3v-.6c0-1.6-.6-3-1.5-4.3z" />
     </svg>
   );
 }
 
+// 4. Sparkle / Four-Point Star (Solid style matching Figma)
 export function SparkleIcon({ className }: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" className={className}>
-      <path d="M12 3l1.8 5.3L19 10l-5.2 1.7L12 17l-1.8-5.3L5 10l5.2-1.7L12 3z" fill="currentColor" />
-      <path d="M19 14.5l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2z" fill="currentColor" />
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M12 2C12 7.5 7.5 12 2 12C7.5 12 12 16.5 12 22C12 16.5 16.5 12 22 12C16.5 12 12 7.5 12 2Z" />
     </svg>
   );
 }

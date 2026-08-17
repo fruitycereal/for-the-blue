@@ -158,7 +158,7 @@ export default function Home() {
 
           <div>
             <p className="text-3xl font-bold text-[#1E3765] sm:text-4xl">
-              30
+              35+
             </p>
             <p className="mt-1 text-sm font-medium text-[#1E3765]/80 sm:text-base">
               Volunteers & contributors

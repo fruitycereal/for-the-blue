@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     "environmental conservation",
     "youthled"
   ],
+  verification: {
+    google: "AY4jXAArBYHrq0tCI9qZzKhnYmVyp59r0rlzJzMw6xk",
+  },
 };
 
 export default function RootLayout({

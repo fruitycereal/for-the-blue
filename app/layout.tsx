@@ -13,8 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "For The Blue",
-  description: "A youth-led nonprofit initiative protecting our oceans and the Arctic through education, creativity, and community action.",
+  title: "For The Blue | Ocean & Arctic Conservation",
+  description:
+    "For The Blue is a youth-led nonprofit supporting ocean and Arctic conservation through fundraising, education, and community action.",
+  keywords: [
+    "For The Blue",
+    "ocean conservation",
+    "Arctic conservation",
+    "youth climate action",
+    "ocean nonprofit",
+    "Arctic conservation nonprofit",
+    "environmental conservation",
+    "youthled"
+  ],
 };
 
 export default function RootLayout({

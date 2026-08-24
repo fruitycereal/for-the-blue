@@ -1,23 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-
-const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
-  { label: "Campaigns", href: "/#campaigns" },
-  { label: "Learn", href: "/learn" },
-  { label: "Get Involved", href: "/#get-involved" },
-  { label: "Contact", href: "/#contact" },
-];
+import type { User } from "@supabase/supabase-js";
+import { createClient } from "@/lib/supabase/client";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+  const supabase = createClient();
+
+  const [user, setUser] = useState<User | null>(null);
+  const [displayName, setDisplayName] = useState<string>("");
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => {
+      setUser(data.user ?? null);
+      setDisplayName((data.user?.user_metadata?.name as string) || data.user?.email || "");
+    });
+
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+      setDisplayName((session?.user?.user_metadata?.name as string) || session?.user?.email || "");
+    });
+
+    return () => listener.subscription.unsubscribe();
+  }, [supabase]);
 
   const goToSection = (id: string) => {
     setOpen(false);
@@ -30,6 +41,13 @@ export default function Navbar() {
       router.push(`/#${id}`);
     }
   };
+
+  async function handleSignOut() {
+    await supabase.auth.signOut();
+    setOpen(false);
+    router.push("/");
+    router.refresh();
+  }
 
   return (
     <nav className="sticky top-0 z-50 bg-[#1E3765]/95 text-white shadow-lg backdrop-blur">
@@ -79,6 +97,13 @@ export default function Navbar() {
             Learn
           </Link>
 
+          <Link
+            href="/blue-action"
+            className="cursor-pointer text-sm font-medium text-white/90 transition-colors hover:text-white"
+          >
+            Blue Action
+          </Link>
+
           <button
             type="button"
             onClick={() => goToSection("get-involved")}
@@ -97,6 +122,34 @@ export default function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
+          {user ? (
+            <>
+              <span className="text-sm font-medium text-white/90">Hi, {displayName}!</span>
+              <button
+                type="button"
+                onClick={handleSignOut}
+                className="cursor-pointer rounded-full border border-white/70 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10"
+              >
+                Sign Out
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                href="/login"
+                className="cursor-pointer rounded-full border border-white/70 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10"
+              >
+                Log In
+              </Link>
+              <Link
+                href="/signup"
+                className="cursor-pointer rounded-full border border-white/70 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10"
+              >
+                Sign Up
+              </Link>
+            </>
+          )}
+
           <button
             type="button"
             onClick={() => goToSection("get-involved")}
@@ -174,6 +227,14 @@ export default function Navbar() {
             Learn
           </Link>
 
+          <Link
+            href="/blue-action"
+            onClick={() => setOpen(false)}
+            className="cursor-pointer rounded-lg px-2 py-2.5 text-sm font-medium text-white/90 hover:bg-white/10"
+          >
+            Blue Action
+          </Link>
+
           <button
             type="button"
             onClick={() => goToSection("get-involved")}
@@ -189,6 +250,36 @@ export default function Navbar() {
           >
             Contact
           </button>
+
+          {user ? (
+            <>
+              <div className="mt-2 px-2 py-1 text-sm font-medium text-white/90">Hi, {displayName}!</div>
+              <button
+                type="button"
+                onClick={handleSignOut}
+                className="cursor-pointer rounded-lg px-2 py-2.5 text-left text-sm font-medium text-white/90 hover:bg-white/10"
+              >
+                Sign Out
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                href="/login"
+                onClick={() => setOpen(false)}
+                className="cursor-pointer rounded-lg px-2 py-2.5 text-sm font-medium text-white/90 hover:bg-white/10"
+              >
+                Log In
+              </Link>
+              <Link
+                href="/signup"
+                onClick={() => setOpen(false)}
+                className="cursor-pointer rounded-lg px-2 py-2.5 text-sm font-medium text-white/90 hover:bg-white/10"
+              >
+                Sign Up
+              </Link>
+            </>
+          )}
 
           <div className="mt-2 flex gap-3">
             <button

@@ -2,7 +2,7 @@
 
 A youth-led nonprofit initiative dedicated to protecting oceans and the Arctic through education, creativity, technology, and community action.
 
-**Live site:** https://for-the-blue.vercel.app
+**Live site:** [for-the-blue.vercel.app](https://for-the-blue.vercel.app)
 
 ## What this is
 
@@ -76,4 +76,4 @@ lib/
 
 For The Blue was founded by Nunnaphat to empower young people through environmental education and inspire real-world action to protect our oceans and the Arctic. Through education, advocacy, and collective action, For The Blue strives to make protecting our planet something everyone can be part of.
 
-Follow along: [@fortheblue.eco](https://www.instagram.com/fortheblue.eco)
+Follow along: [@fortheblue.eco](https://linktr.ee/fortheblue.eco)
